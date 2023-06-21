@@ -1,5 +1,9 @@
 FROM text-generation-webui:latest
 
+# nvidia environment
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=all
+
 WORKDIR /app
 
 RUN . /app/venv/bin/activate && pip3 install xformers deepspeed && \
