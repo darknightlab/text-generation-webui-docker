@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y wget libaio-dev gcc linux-headers-$(una
     dpkg -i cuda-keyring_1.0-1_all.deb && apt-get update && \
     apt-get install -y --no-install-recommends cuda && \
     . /app/venv/bin/activate && pip3 install xformers deepspeed && \
-    apt-get remove cuda && apt autoremove && \
+    apt-get remove -y cuda && apt autoremove && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV NVIDIA_VISIBLE_DEVICES=
