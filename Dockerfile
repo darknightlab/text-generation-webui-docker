@@ -21,4 +21,4 @@ ENV DEBIAN_FRONTEND=
 
 ENV CLI_ARGS=""
 # CMD . /app/venv/bin/activate && python3 server.py ${CLI_ARGS}
-CMD . /app/venv/bin/activate && deepspeed --num_gpus 1 server.py --deepspeed ${CLI_ARGS}
+CMD . /app/venv/bin/activate && deepspeed --num_gpus 1 server.py ${CLI_ARGS}
